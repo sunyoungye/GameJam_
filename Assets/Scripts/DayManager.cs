@@ -21,10 +21,10 @@ public class DayManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timeManager != null && timeManager.currentDay == 2)
+        /*if (timeManager != null && timeManager.currentDay == 2)
         {
             triangle.SetActive(false);
-        }
+        }*/
 
     }
 }
