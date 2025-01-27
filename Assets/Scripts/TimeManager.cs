@@ -28,10 +28,18 @@ public class TimeManager : MonoBehaviour
     public GameObject pop_up;
     private Button nextDay;
 
+    //Script
+    [SerializeField] public MoveObject moveObject;
+
     void Start()
     {
         InitilizeTime();
         pop_up.SetActive(false);
+
+        if (moveObject != null )
+        {
+            moveObject = FindAnyObjectByType<MoveObject>();
+        }
     }
 
     // Update is called once per frame
@@ -74,7 +82,7 @@ public class TimeManager : MonoBehaviour
 
     public void CurrentDay()
     {
-        dayCount.text = $"Day:{currentDay = currentDay + 1}";
+        dayCount.text = $"     {currentDay = currentDay + 1}";
     }
 
     public void OnButtonNextDay()
@@ -82,6 +90,7 @@ public class TimeManager : MonoBehaviour
         InitilizeTime();
         Debug.Log("is Next Day");
         pop_up.SetActive(false);
+        moveObject.updatedWatering = moveObject.maxWaterFill;
         CurrentDay(); 
     }
 
